@@ -4,12 +4,13 @@ class AuditExtension < Radiant::Extension
   version "0.9"
   description "Audit Extension - logs user actions in Radiant"
   url "http://digitalpulp.com"
-  
-  define_routes do |map|
-    map.namespace :admin do |admin|
-      admin.resources :audits
-    end
-  end
+
+  # define_routes has been deprecated in favor of extension's config/routes.rb
+  #define_routes do |map|
+  #  map.namespace :admin do |admin|
+  #    admin.resources :audits
+  #  end
+  #end
   
   DATE_TIME_FORMATS = {
     :iso8601     => '%F',
